@@ -1,0 +1,29 @@
+﻿<Window x:Class="StatusJobWPF.WindowUserCard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StatusJobWPF"
+        mc:Ignorable="d"
+        Title="WindowUserCard" Height="202" Width="586.667">
+    <Grid Margin="0,0,0,-3.4" Loaded="Grid_Loaded">
+        <TextBox x:Name="Id" HorizontalAlignment="Left" Height="23" Margin="99,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" RenderTransformOrigin="0.889,0.533"/>
+        <TextBox x:Name="Name" HorizontalAlignment="Left" Height="23" Margin="99,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="467"/>
+        <CheckBox x:Name="isDelete" Content="Удален" HorizontalAlignment="Left" Margin="99,95,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="77">
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.512"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+        <Label Content="Код" HorizontalAlignment="Left" Margin="64,33,0,0" VerticalAlignment="Top"/>
+        <Label Content="Наименование" HorizontalAlignment="Left" Margin="0,61,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.42,0.861" Width="94"/>
+        <Button x:Name="ButtonSave" Content="Сохранить" HorizontalAlignment="Left" Margin="99,131,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.515,0.236" Click="ButtonSave_Click"/>
+        <Button x:Name="ButtonCancel" Content="Отмена" HorizontalAlignment="Left" Margin="226,131,0,25.4" Width="75"/>
+        <Label Content="Пользователи" HorizontalAlignment="Left" Margin="201,2,0,0" VerticalAlignment="Top" FontSize="20"/>
+
+    </Grid>
+</Window>

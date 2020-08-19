@@ -1,0 +1,19 @@
+﻿<Window x:Class="StatusJobWPF.WindowStatusCard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StatusJobWPF"
+        mc:Ignorable="d"
+        Title="WindowStatusCard" Height="251.919" Width="531.828">
+    <Grid>
+        <Button x:Name="ButtonSave" Content="Сохранить" HorizontalAlignment="Left" Margin="152,175,0,0" VerticalAlignment="Top" Width="100" Click="ButtonSave_Click"/>
+        <Button x:Name="ButtonCancel" Content="Отмена" HorizontalAlignment="Left" Height="19" Margin="263,175,0,0" VerticalAlignment="Top" Width="100"/>
+        <CheckBox x:Name="IsDelete" Content="Удален" HorizontalAlignment="Left" Margin="108,129,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.525,0.624"/>
+        <TextBox x:Name="Id" HorizontalAlignment="Left" Height="23" Margin="108,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="60"/>
+        <TextBox x:Name="Name" HorizontalAlignment="Left" Height="23" Margin="108,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="400"/>
+        <Label Content="Код" HorizontalAlignment="Left" Margin="72,41,0,0" VerticalAlignment="Top" RenderTransformOrigin="9.184,4.978"/>
+        <Label Content="Наименование" HorizontalAlignment="Left" Margin="10,81,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

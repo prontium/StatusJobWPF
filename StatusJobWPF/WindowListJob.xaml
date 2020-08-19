@@ -1,0 +1,25 @@
+﻿<Window x:Class="StatusJobWPF.WindowListJob"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StatusJobWPF"
+        mc:Ignorable="d"
+        Title="WindowListJob" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="ListJobGrid" HorizontalAlignment="Left" Height="310" Margin="10,10,0,0" VerticalAlignment="Top" Width="774" ItemsSource="{Binding Jobs}" AutoGenerateColumns="False" Loaded="DataGrid_Loaded">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id, Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Код" Width="50"/>
+                <DataGridTextColumn Binding="{Binding Name}" ClipboardContentBinding="{x:Null}" Header="Тема" Width="150"/>
+                <DataGridTextColumn Binding="{Binding isDelete}" ClipboardContentBinding="{x:Null}" Header="Пометка удаления" Width="50"/>
+            </DataGrid.Columns>
+            <DataGrid.DataContext>
+                <local:StatusJobDBDataSet/>
+            </DataGrid.DataContext>
+        </DataGrid>
+        <Button x:Name="ButtonSave" Content="Сохранить" HorizontalAlignment="Left" Height="40" Margin="45,345,0,0" VerticalAlignment="Top" Width="150" Click="ButtonSave_Click"/>
+        <Button x:Name="ButtonCancel" Content="Отмена" HorizontalAlignment="Left" Height="40" Margin="230,345,0,0" VerticalAlignment="Top" Width="140" Click="ButtonCancel_Click"/>
+        <Button x:Name="ButtonAdd" Content="Добавить" HorizontalAlignment="Left" Height="40" Margin="410,345,0,0" VerticalAlignment="Top" Width="145" Click="ButtonAdd_Click"/>
+
+    </Grid>
+</Window>

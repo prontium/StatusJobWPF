@@ -1,0 +1,29 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StatusJobWPF"
+        xmlns:StatusJobDBDataSetTableAdapters="clr-namespace:StatusJobWPF.StatusJobDBDataSetTableAdapters" x:Class="StatusJobWPF.WindowListUsers"
+        mc:Ignorable="d"
+        Title="WindowListUsers" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="130*"/>
+            <ColumnDefinition Width="564*"/>
+            <ColumnDefinition Width="99*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="ListUsersGrid" HorizontalAlignment="Left" Height="305" Margin="10,10,0,0" VerticalAlignment="Top" Width="774" Grid.ColumnSpan="3" ItemsSource="{Binding Users}" AutoGenerateColumns="False" MouseDoubleClick="ListUsersGrid_MouseDoubleClick">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id, Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Код" Width="50"/>
+                <DataGridTextColumn Binding="{Binding Name}" ClipboardContentBinding="{x:Null}" Header="Наименование" Width="150"/>
+                <DataGridTextColumn Binding="{Binding isDelete}" ClipboardContentBinding="{x:Null}" Header="Пометка удаления" Width="50"/>
+            </DataGrid.Columns>
+            <DataGrid.DataContext>
+                <local:StatusJobDBDataSet/>
+            </DataGrid.DataContext>
+        </DataGrid>
+        <Button x:Name="ButtonSave" Content="Сохранить" HorizontalAlignment="Left" Height="23" Margin="116,336,0,0" VerticalAlignment="Top" Width="140" Click="ButtonSave_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="ButtonOpen" Content="Открыть" HorizontalAlignment="Left" Height="23" Margin="183,336,0,0" VerticalAlignment="Top" Width="194" Click="ButtonOpen_Click" Grid.Column="1"/>
+    </Grid>
+</Window>
